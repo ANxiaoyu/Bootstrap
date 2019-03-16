@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+<!--<style>
+.carousel-caption{
+	background:#000;
+	width:100%;
+	opacity:0.7;
+	bottom:0px!important;
+	left:0px!important;
+	position:absolute;
+}
+.carousel-caption p{
+	text-align:left;
+}
+.carousel-caption h3{
+	margin:0px;
+}
+</style>
+-->
+<link rel="stylesheet"href="bs/css/bootstrap.min.css">
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+<script src="bs/js/bootstrap.min.js"></script>
+<script src="https://v3.bootcss.com/assets/js/docs.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-heading">bootstrap框架</h1>
+
+		<div id="mycarousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src='民国1.jpg' alt=''>
+					<div class="carousel-caption">
+						<h3>民国</h3>
+						<p>民国使我快乐！哈哈哈</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src='民国2.jpg' alt=''>
+					<div class="carousel-caption">
+						<h3>民国</h3>
+						<p>民国使我快乐！哈哈哈</p>
+					</div>
+				</div>
+				<div class="item">
+					<img src='民国3.jpg' alt=''>
+					<div class="carousel-caption">
+						<h3>民国</h3>
+						<p>民国使我快乐！哈哈哈</p>
+					</div>
+				</div>
+			</div>
+
+			<!--指示灯-->
+			<ol class="carousel-indicators">
+				<li data-target='#mycarousel'data-slide-to='0' class="active"></li>
+				<li data-target='#mycarousel'data-slide-to='1'></li>
+				<li data-target='#mycarousel'data-slide-to='2'></li>
+			</ol>
+
+			<!--左右控制-->
+			<a href="#mycarousel" class="left carousel-control" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a href="#mycarousel" class="right carousel-control" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+</body>
+<script>
+/*$('.carousel-caption').hide();
+$('.item').hover(
+	function(){
+	$(this).fide('.carousel-caption').slideDown();
+     }
+     function(){
+     $(this).fide('.carousel-caption').slideUp()
+     }
+);
+*/
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+<link rel="stylesheet"href="bs/css/bootstrap.min.css">
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+<script src="bs/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">bootstrap</h1>
+
+		<a href="#mymodal" class="btn btn-primary btn-lg"data-toggle="modal">Launch demo modal</a>
+
+		<div id="mymodal" class="modal fade">
+			<div class="modal-dialog modal-sm">
+				<div class="model-content">
+					<div class="modal-header">
+						<div class="close"data-dismiss="modal">&times;</div>
+						<h3>modal模态框</h3>
+					</div>
+					<div class="modal-body">
+						<h4>linux</h4>
+						<p>linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!linux is very good!php have little hard!</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default"data-dismiss="modal">close</button>
+						<button class="btn btn-primary save">save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+$('.save').click(function(){
+	alert('登陆成功！');
+
+	//把model隐藏
+	$('#mymodal').modal('hide');
+});
+</script>
+</html>

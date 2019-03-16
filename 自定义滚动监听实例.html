@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+<style>
+body{
+	padding-top:60px;
+	position:relative;
+}
+
+.list-group{
+	position:fixed;
+	top:200px;
+	left:50px;
+}
+
+.panel{
+	width:900px;
+	margin:0 auto;
+}
+</style>
+<link rel="stylesheet"href="bs/css/bootstrap.min.css">
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+<script src="bs/js/bootstrap.min.js"></script>
+<script src="bs/js/holder.js"></script>
+</head>
+<body data-spy="scroll"data-target="#mynav"data-offset="100">
+	<div class="cintainer">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">Brand</a>
+					<button class="navbar-toggle collapsed"data-toggle="collapse"data-target="#mynavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div id="mynavbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active linux"><a href="">linux</a></li>
+						<li class="php"><a href="">php</a></li>
+						<li class="js"><a href="">js</a></li>
+						<li class="html5"><a href="">html5</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col-md-1">
+				<div class="list-group"idx="mynav">
+					<a id="linux"href="javascript:"class="list-group-item active">linux</a>
+					<a id="php"href="javascript:"class="list-group-item">php</a>
+					<a id="js"href="javascript:"class="list-group-item">js</a>
+					<a id="html5"href="javascript:"class="list-group-item">html5</a>
+				</div>
+			</div>
+
+			<div class="col-md-11">
+				<div class="panel panel-primary"idx="linux">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h1 >linux技术</h1>
+						</div>
+					</div>
+					<div class="panel-body">
+						<img src="holder.js/100%x300" alt="">
+						<p>linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!linux is very good!</p>
+					</div>
+				</div>
+
+				<div class="panel panel-primary"idx="php">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h1 >php技术</h1>
+						</div>
+					</div>
+					<div class="panel-body">
+						<img src="holder.js/100%x300" alt="">
+						<p>php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!php is very good!</p>
+					</div>
+				</div>
+				<div class="panel panel-primary"idx="js">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h1 >js技术</h1>
+						</div>
+					</div>
+					<div class="panel-body">
+						<img src="holder.js/100%x300" alt="">
+						<p>js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!js is very good!</p>
+					</div>
+				</div>
+				<div class="panel panel-primary" idx="html5">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<h1>html5技术</h1>
+						</div>
+					</div>
+					<div class="panel-body">
+						<img src="holder.js/100%x300" alt="">
+						<p>html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!html5 is very good!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script>
+$(window).scroll(function(){
+	$('.panel').each(function(){
+		st=$(window).scrollTop();
+		pt=$(this).offset().top;
+
+		if(st>=(pt-100)){
+			idx=$(this).attr('idx');
+			$('#'+idx).addClass('active');
+			$('.list-group-item').not($('#'+idx)).removeClass('active');
+
+			$('.'+idx).addClass('active');
+			$('.navbar-nav li').not($('.'+idx)).removeClass('active');
+		}
+	});
+});
+</script>
+</html>

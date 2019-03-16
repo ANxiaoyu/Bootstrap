@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+
+<style>
+.container{
+	width:1140px;
+	padding:0px 15px;
+	margin:0 auto;
+}
+
+.window{
+	height:300px;
+	
+	overflow:hidden;
+	position:relative;
+}
+
+.window img{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+</style>
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">bootstrap幻灯片</h1>
+
+		
+			<div class="window">
+				<img src="民国3.jpg">
+				<img src="民国2.jpg">
+				<img src="民国1.jpg">
+			</div>
+		
+	</div>
+</body>
+<script>
+setInterval(function(){
+	imgs=$('.window img');
+
+	imgs.eq(2).stop().fadeOut(700,function(){
+			$(this).show().prependTo('.window');
+	});
+},1000);
+</script>
+</html>

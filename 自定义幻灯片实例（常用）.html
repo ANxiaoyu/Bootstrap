@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+
+<style>
+.container{
+	width:1140px;
+	padding:0px 15px;
+	margin:0 auto;
+}
+
+.carousel{
+	height:300px;
+	overflow:hidden;
+	position:relative;
+}
+.image_reel{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.image_reel img{
+	float:left;
+}
+.paging{
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	display:none;
+}
+
+.paging a{
+	text-decoration:none;
+	color:#fff;
+	padding:0px 5px;
+}
+
+.paging a:hover{
+	background:#920000;
+	font-weight:bold;
+}
+
+.paging a.active{
+	background:#920000;
+	font-weight:bold;
+}
+</style>
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">bootstrap幻灯片</h1>
+
+		<div class="carousel">
+			<div class="window">
+				<div class="image_reel">
+					<a href="#"><img src="民国1.jpg" alt=""></a>
+					<a href="#"><img src="民国2.jpg"alt=""></a>
+					<a href="#"><img src="民国3.jpg"alt=""></a>
+				</div>
+			</div>
+			<div class="paging">
+				<a href="#" rel="1">1</a>
+				<a href="#" rel="2">2</a>
+				<a href="#" rel="3">3</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+//第一步
+$('.paging').show();
+$('.paging a:first').addClass('active');
+
+var imageWidth=$('.window').width();
+var imageSum=$('.image_reel img').size();
+var imageRealWidth=imageWidth * imageSum;
+
+$('.image_reel').css({'width':imageRealWidth});
+
+//第二步
+rotate=function(){
+	var triggerID=$active.attr('rel')-1;
+	var image_reelPosition=triggerID * imageWidth;
+
+	$('.paging a').removeClass('active');
+	$active.addClass('active');
+
+	$('.image_reel').animate({
+		left:-image_reelPosition
+	},500);
+};
+
+rotateSwitch=function(){
+	timer=setInterval(function(){
+
+		$active=$('.paging a.active').next();
+		if($active.length===0){
+			$active=$('.paging a:first');
+		}
+		rotate();
+	},2000);
+};
+rotateSwitch();
+
+//第三步
+//on hover
+$('.image_reel a').hover(function(){
+	clearInterval(timer);
+},function(){
+	rotateSwitch();
+});
+
+// on click
+$('.paging a').click(function(){
+	$active=$(this);
+
+	clearInterval(timer);
+	rotate();
+	rotateSwitch();
+	return false;
+});
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+<style>
+.row{
+	padding:15px 15px;
+	display:none;
+}
+</style>
+<link rel="stylesheet" href="bs/css/bootstrap.css">
+<script src="bs/js/jquery-1.12.4.min.js"></script>
+<script src="bs/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">bootstrap</h1>
+		
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="">Home</a>
+			</li>
+			<li class="">
+				<a href="">Home</a>
+			</li>
+			<li class="">
+				<a href="">Home</a>
+			</li>
+		</ul>
+
+		<div class="row">
+			<p>学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐学习使我快乐</p>
+		</div>
+		<div class="row">
+			<p>bootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is goodbootstrap is </p>
+	</div>
+	<div class="row">
+		<p>js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类js类</p>
+	</div>
+</body>
+<script>
+$('li').mouseenter(function(){
+	$(this).addClass('active');
+	$('li').not($(this)).removeClass('active');
+
+	inx=$(this).index('li');
+	$('.row').eq(inx).show(100);
+	$('.row').not($('.row').eq(inx)).hide(100);
+});
+
+$('.row').eq(0).show(100);
+</script>
+</html>
